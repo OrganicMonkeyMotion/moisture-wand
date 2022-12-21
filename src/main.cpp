@@ -514,10 +514,14 @@ void loop() {
         // publish to MQTT topic
         moistureMessage ( asoilmoist, gwc, temp, hum, myTag );
 
+
       } else if (buttonState == buttonHold) {
 
         // keep pin down till it makes sense its up
         if (touchRead(TOUCHPIN) > BUTTON_UP_THRESH) {
+
+          displayUpdate("moisture = " + String(asoilmoist));
+          delay(2000);
 
           buttonState = buttonUp;
           readState = readTag;
