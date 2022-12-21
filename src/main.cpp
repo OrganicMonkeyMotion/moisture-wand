@@ -521,7 +521,7 @@ void loop() {
         if (touchRead(TOUCHPIN) > BUTTON_UP_THRESH) {
 
           displayUpdate("moisture = " + String(asoilmoist));
-          delay(2000);
+          delay(3000);
 
           buttonState = buttonUp;
           readState = readTag;
